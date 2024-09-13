@@ -1,0 +1,13 @@
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = Arunabh Bhattacharya
+	email = arunabh.nd@gmail.com
+[http]
+	postBuffer = 1048576000
+	lowSpeedLimit = 0
+	lowSpeedTime = 999999
