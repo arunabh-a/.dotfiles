@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the path to your dotfiles repository
-DOTFILES_DIR="$HOME/dotfiles/"
+DOTFILES_DIR="$HOME/.dotfiles/"
 
 # Create symbolic links for directories
 ln -sf "$DOTFILES_DIR/zed" "$HOME/.config/zed"
