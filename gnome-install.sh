@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Define the path to your dotfiles repository
-DOTFILES_DIR="$HOME/path/to/your/dotfiles/repo"
-
 # List of GNOME extensions to install
 GNOME_EXTENSIONS=(
     "user-theme@gnome-shell-extensions.gcampax.github.com"

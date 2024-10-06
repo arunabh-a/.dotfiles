@@ -11,9 +11,12 @@ function help_menu() {
 }
 
 function install_changes() {
-  # Check if asar is installed
-  
-  cd app/renderer
+    cd /
+    sudo cp /opt/Notion/resources/app.asar /home/arunabh/Desktop/app.asar
+    cd home/arunabh/Desktop
+    asar extract app.asar app
+
+    cd app/renderer
 
   # Check if the modification has already been done
   if grep -q "require('notion-enhancer')('renderer/preload', exports, (js) => eval(js));" preload.js; then
@@ -316,9 +319,9 @@ function uninstall_changes() {
 }
 
 if [[ "$1" == "-u" || "$1" == "--uninstall" ]]; then
-  uninstall_changes
+    uninstall_changes
 elif [[ "$1" == "-h" || "$1" == "--help" ]]; then
-  help_menu
+    help_menu
 else
-  install_changes
+    install_changes
 fi

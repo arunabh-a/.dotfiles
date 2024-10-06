@@ -35,13 +35,6 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt update
 sudo apt install -y code
 
-# Install Hidamari
-echo "Installing Hidamari..."
-wget -qO- https://github.com/hidamari/hidamari/releases/download/v1.0/hidamari_1.0_amd64.deb -O hidamari.deb
-sudo dpkg -i hidamari.deb
-sudo apt -f install -y  # Fix any missing dependencies
-rm hidamari.deb
-
 # Install Ulauncher
 echo "Installing Ulauncher..."
 sudo add-apt-repository ppa:agornostal/ulauncher

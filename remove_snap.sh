@@ -60,6 +60,7 @@ if command_exists snap; then
     sudo rm -rf /snap
     sudo rm -rf /var/snap
     sudo rm -rf /var/lib/snapd
+    sudo apt autoremove
 
     echo "Snap packages and snapd have been removed."
 else
