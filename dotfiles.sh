@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 
 # Define the path to your dotfiles repository
 DOTFILES_DIR="$HOME/.dotfiles/"
@@ -10,6 +10,7 @@ ln -sf "$DOTFILES_DIR/.icons" "$HOME/.icons"
 ln -sf "$DOTFILES_DIR/.themes" "$HOME/.themes"
 ln -sf "$DOTFILES_DIR/.vscode" "$HOME/.vscode"
 ln -sf "$DOTFILES_DIR/icons" "$HOME/.local/share/icons"
+ln -sf "$DOTFILES_DIR/nvim" "$HOME/.config/nvim/"
 # ln -sf "$DOTFILES_DIR/Hidamari" "$HOME/Videos/Hidamari"
 
 # Create symbolic links for files
