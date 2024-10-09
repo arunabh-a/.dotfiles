@@ -39,7 +39,7 @@ install_packages() {
     sudo apt update
 
     echo "Installing required packages..."
-    sudo apt install -y gnome-shell-extensions gnome-tweaks gnome-shell-extension-prefs gnome-shell-extension-manager jq wget
+    sudo apt install -y gnome-shell-extensions gnome-tweaks gnome-shell-extension-prefs gnome-shell-extension-manager jq wget 
 }
 
 # Function to install GNOME extensions
@@ -86,6 +86,6 @@ configure_gnome_settings() {
 # Execute functions
 install_packages
 install_gnome_extensions
-configure_gnome_settings
+# configure_gnome_settings
 
 echo "GNOME setup completed successfully."
