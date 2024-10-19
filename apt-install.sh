@@ -4,38 +4,21 @@
 echo "Updating package list..."
 sudo apt update
 
-sudo apt-get install wget gpg
+sudo apt-get install wget gpg flatpak gnome-software-plugin-flatpak
 
-# Installing Brave Browser
-echo "Installing Brave Browser"
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install Bitwarden
 echo "Installing Bitwarden..."
-wget -qO- https://vault.bitwarden.com/download/?app=desktop&platform=linux | sudo dpkg -i /dev/stdin
-sudo apt -f install -y  # Fix any missing dependencies
+flatpak install flathub com.bitwarden.desktop
 
 # Install Discord
-echo "Installing Discord..."
-wget -qO- https://discordapp.com/api/download?platform=linux&format=deb -O discord.deb
-sudo dpkg -i discord.deb
-sudo apt -f install -y  # Fix any missing dependencies
-rm discord.deb
+echo "Installing Discord..."\
+flatpak install flathub com.discordapp.Discord
 
 # Install Telegram
 echo "Installing Telegram..."
-wget -qO- https://telegram.org/dl/desktop/linux | sudo dpkg -i /dev/stdin
-sudo apt -f install -y  # Fix any missing dependencies
-
-# Install Obsidian
-echo "Installing Obsidian..."
-wget -qO- https://github.com/obsidianmd/obsidian-releases/releases/download/v0.16.12/obsidian_0.16.12_amd64.deb -O obsidian.deb
-sudo dpkg -i obsidian.deb
-sudo apt -f install -y  # Fix any missing dependencies
-rm obsidian.deb
+flatpak install flathub org.telegram.desktop
 
 # Install VSCode
 echo "Installing Visual Studio Code..."

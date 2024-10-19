@@ -10,15 +10,18 @@ function help_menu() {
   echo
 }
 
-cd /
-sudo cp /opt/Notion/resources/app.asar /home/arunabh/Desktop/app.asar
-cd home/arunabh/Desktop
-asar extract app.asar app
+
+# cd /
+# sudo cp /opt/Notion/resources/app.asar /home/arunabh/Desktop/app.asar
+# cd home/arunabh/Desktop
+# asar extract app.asar app
+# echo "asar extracted..."
 
 function install_changes() {
   # Check if asar is installed
   
   cd app/renderer
+
 
   # Check if the modification has already been done
   if grep -q "require('notion-enhancer')('renderer/preload', exports, (js) => eval(js));" preload.js; then
@@ -292,22 +295,26 @@ function install_changes() {
     polyfill();
 })();
 EOL
+
   fi
 
   # Navigate back
-  cd /
+#   cd home/arunabh/Desktop
+#   pwd
 
   # Repack the asar archive
-  asar pack ./app app.asar
-  sudo mv /home/arunabh/Desktop/app.asar /opt/Notion/resources/app.asar
+#   asar pack ./app app.asar
+#   sudo mv /home/arunabh/Desktop/app.asar /opt/Notion/resources/app.asar
+#   echo "injected asar planted..."
 }
-
+install_changes
 function uninstall_changes() {
   cd /opt/Notion\ Enhanced/resources/
 
   if [ -f "app.asar.bak" ]; then
     echo "Restoring original app.asar from backup..."
     mv app.asar.bak app.asar
+
   else
     echo "Backup not found! Cannot restore original state."
     exit 1
@@ -325,6 +332,5 @@ if [[ "$1" == "-u" || "$1" == "--uninstall" ]]; then
   uninstall_changes
 elif [[ "$1" == "-h" || "$1" == "--help" ]]; then
   help_menu
-else
-  install_changes
+
 fi

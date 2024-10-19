@@ -1,27 +1,5 @@
 #!/bin/bash
 
-# List of GNOME extensions to install
-# GNOME_EXTENSIONS=(
-#     "user-theme@gnome-shell-extensions.gcampax.github.com"
-#     "Vitals@CoreCoding.com"
-#     "ding@rastersoft.com"
-#     "appindicatorsupport@rgcjonas.gmail.com"
-#     "gnome-ui-tune@itstime.tech"
-#     "drive-menu@gnome-shell-extensions.gcampax.github.com"
-#     "blur-my-shell@aunetx"
-#     "just-perfection-desktop@just-perfection"
-#     "quick-settings-tweaks@qwreey"
-#     "rounded-window-corners@fxgn"
-#     "vertical-workspaces@G-dH.github.com"
-#     "dash-to-dock@micxgx.gmail.com"
-#     "apps-menu@gnome-shell-extensions.gcampax.github.com"
-#     "background-logo@fedorahosted.org"
-#     "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
-#     "places-menu@gnome-shell-extensions.gcampax.github.com"
-#     "window-list@gnome-shell-extensions.gcampax.github.com"
-# )
-
-# Additional extensions from URLs
 GNOME_EXTENSIONS=(
     "https://extensions.gnome.org/extension/4245/gesture-improvements/"
     "https://extensions.gnome.org/extension/19/user-themes/"
@@ -30,10 +8,9 @@ GNOME_EXTENSIONS=(
     "https://extensions.gnome.org/extension/7048/rounded-window-corners-reborn/"
     "https://extensions.gnome.org/extension/5177/vertical-workspaces/"
     "https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/"
-
 )
 
-# Function to install packages
+#Function to install packages
 install_packages() {
     echo "Updating package list..."
     sudo apt update
@@ -63,29 +40,10 @@ install_gnome_extensions() {
     done
 }
 
-# Function to configure GNOME settings
-configure_gnome_settings() {
-    echo "Configuring GNOME settings..."
 
-    # Set icon theme
-    gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-dark"
-
-    # Set GNOME Shell theme
-    gsettings set org.gnome.shell.extensions.user-theme name "Tokyonight-Dark-BL-GS"
-
-    # Set GTK theme
-    gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark"
-
-    # Set button layout
-    gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-
-    # Center new windows
-    gsettings set org.gnome.mutter center-new-windows true
-}
 
 # Execute functions
 install_packages
 install_gnome_extensions
-# configure_gnome_settings
 
 echo "GNOME setup completed successfully."
