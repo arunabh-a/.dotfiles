@@ -4,8 +4,8 @@
 DOTFILES_DIR="$HOME/.dotfiles/"
 
 # Copy directories
-sudo cp -r "$DOTFILES_DIR/zed" "$HOME/.config/zed"
-sudo cp -r "$DOTFILES_DIR/ulauncher" "$HOME/.config/ulauncher"
+# sudo cp -r "$DOTFILES_DIR/zed" "$HOME/.config/zed"
+# sudo cp -r "$DOTFILES_DIR/ulauncher" "$HOME/.config/ulauncher"
 sudo cp -r "$DOTFILES_DIR/.icons" "$HOME/.icons"
 sudo cp -r "$DOTFILES_DIR/.themes" "$HOME/.themes"
 sudo cp -r "$DOTFILES_DIR/.vscode" "$HOME/.vscode"
